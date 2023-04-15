@@ -1,0 +1,61 @@
+<header class="layout-center">
+  <a
+    href="/"
+    style={{
+      color: `white`,
+      textDecoration: `none`,
+    }}
+    class="container-logo-titol"
+  >
+    <img
+      src={'/estrella-unitat.svg'}
+      alt="Logo estrella Unitat · Argentona per la República"
+      class="logo-estrella"
+    />
+    <span class="titol-unitat">Unitat · Argentona per la República</span>
+  </a>
+</header>
+
+<style>
+  header {
+    background: black;
+    box-sizing: border-box;
+    padding: var(--layout-content-margin-0_5) var(--layout-content-margin);
+  }
+
+  .container-logo-titol {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .logo-estrella {
+    width: 40px;
+    margin-right: 16px;
+    flex-shrink: 0; /* do not shrink */
+  }
+
+  .titol-unitat {
+    font-size: var(--font-size-18);
+  }
+
+  @media all and (min-width: 480px) {
+    .logo-estrella {
+      width: 45px;
+    }
+
+    .titol-unitat {
+      font-size: var(--font-size-20);
+    }
+  }
+
+  @media all and (min-width: 768px) {
+    .logo-estrella {
+      width: 50px;
+    }
+
+    .titol-unitat {
+      font-size: var(--font-size-24);
+    }
+  }
+</style>
