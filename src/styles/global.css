@@ -1,0 +1,202 @@
+/* Media queries */
+/* https://ricostacruz.com/til/css-media-query-breakpoints */
+/* < 480 -> mobile portrait */
+/* 480 to 768 -> mobile landscape */
+/* 768 to 900 -> tablet portrait */
+/* > 900 -> desktop, tablet landscape */
+
+/* Reset */
+
+html,
+body,
+h1,
+h2,
+h3,
+p,
+div,
+a,
+img,
+article,
+section {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+
+/* Fonts */
+
+/* sans-serif */
+@font-face {
+  font-family: Poppins;
+  src: url('/fonts/Poppins-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Poppins;
+  src: url('/fonts/Poppins-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+/* serif */
+@font-face {
+  font-family: Merriweather;
+  src: url('/fonts/Merriweather-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Merriweather;
+  src: url('/fonts/Merriweather-Bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  font-family: var(--font-family-sans-serif);
+}
+
+/* Variables (properties) */
+
+:root {
+  --layout-max-width: 900px;
+  --layout-content-margin: 20px; /* margin to be applied to both left and right side of the content */
+  --layout-content-margin-0_5: calc(var(--layout-content-margin) / 2);
+  --layout-content-margin-0_25: calc(var(--layout-content-margin) / 4);
+  --layout-content-margin-0_75: calc(3 * var(--layout-content-margin) / 4);
+  --layout-content-margin-1_5: calc(var(--layout-content-margin) * 1.5);
+  --layout-border: 2px;
+
+  /* Font family */
+  --font-family-serif: Merriweather, serif;
+  --font-family-sans-serif: Poppins, sans-serif;
+
+  /* Font sizes */
+  --font-size-12: 12px;
+  --font-size-14: 14px;
+  --font-size-16: 16px;
+  --font-size-18: 18px;
+  --font-size-20: 20px;
+  --font-size-24: 24px;
+  --font-size-30: 30px;
+  --font-size-36: 36px;
+  --font-size-48: 48px;
+  --font-size-60: 60px;
+  --font-size-72: 72px;
+
+  /* Line height */
+  --line-height-full-width-paragraph: 1.8;
+  --line-height-full-width-paragraph-serif: 1.6;
+
+  /* Brand colors */
+  --color-vermell: #eb5757; /* hsl(0, 79%, 63%) */
+  --color-groc: #fbc259; /* hsl(39, 95%, 67%) */
+  --color-turquesa: #5ab6a1; /* hsl(166, 39%, 53%) */
+  --color-morat: #693065;
+  --color-verd: #6daf43;
+  --color-negre: #2a2723; /* hsl(34, 9%, 15%) */
+
+  /* Vermell */
+  --color-vermell1: hsl(0, 99%, 95%);
+  --color-vermell2: hsl(0, 92%, 87%);
+  --color-vermell3: hsl(0, 87%, 79%);
+  --color-vermell4: hsl(0, 79%, 71%);
+  /*--color-vermell5: hsl(0, 79%, 63%); equal to --color-vermell */
+  --color-vermell6: hsl(0, 79%, 51%);
+  --color-vermell7: hsl(0, 87%, 39%);
+  --color-vermell8: hsl(0, 92%, 27%);
+  --color-vermell9: hsl(0, 99%, 15%);
+
+  /* Groc */
+  --color-groc1: hsl(39, 99%, 95%);
+  --color-groc2: hsl(39, 98%, 88%);
+  --color-groc3: hsl(39, 96%, 81%);
+  --color-groc4: hsl(39, 95%, 74%);
+  /*--color-groc5: hsl(39, 95%, 67%); equal to --color-groc */
+  --color-groc6: hsl(39, 95%, 54%);
+  --color-groc7: hsl(39, 96%, 41%);
+  --color-groc8: hsl(39, 98%, 28%);
+  --color-groc9: hsl(39, 99%, 15%);
+
+  /* Turquesa */
+  --color-turquesa1: hsl(166, 99%, 95%);
+  --color-turquesa2: hsl(166, 79%, 84%);
+  --color-turquesa3: hsl(166, 59%, 74%);
+  --color-turquesa4: hsl(166, 39%, 63%);
+  /*--color-turquesa5: hsl(166, 39%, 53%); equal to --color-turquesa */
+  --color-turquesa6: hsl(166, 39%, 43%);
+  --color-turquesa7: hsl(166, 59%, 33%);
+  --color-turquesa8: hsl(166, 79%, 24%);
+  --color-turquesa9: hsl(166, 99%, 15%);
+
+  /* Grays */
+  --color-gray1: hsl(34, 9%, 95%);
+  --color-gray2: hsl(34, 8%, 85%);
+  --color-gray3: hsl(34, 7%, 75%);
+  --color-gray4: hsl(34, 6%, 65%);
+  --color-gray5: hsl(34, 5%, 55%);
+  --color-gray6: hsl(34, 6%, 45%);
+  --color-gray7: hsl(34, 7%, 35%);
+  --color-gray8: hsl(34, 8%, 25%);
+  --color-gray9: hsl(34, 9%, 15%); /* equal to --color-negre */
+}
+
+/* Main layout */
+
+.layout-center {
+  max-width: var(--layout-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+.layout-center-with-margin {
+  width: calc(100% - 2 * var(--layout-content-margin));
+  max-width: calc(var(--layout-max-width) - 2 * var(--layout-content-margin));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Nav */
+
+nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: var(--color-vermell);
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  padding: var(--layout-content-margin-0_25) var(--layout-content-margin-0_5);
+}
+
+/* Shared styles not used in layout.js but used in various pages */
+
+.bold-text {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: var(--font-size-24); /* h1 default is 32px in Firefox */
+  margin-top: 30px;
+}
+h2 {
+  font-size: var(--font-size-20); /* h2 default is 24px in Firefox */
+  margin-top: 30px;
+}
+h3 {
+  font-size: var(--font-size-18); /* h2 default is 19px in Firefox */
+}
+@media all and (min-width: 768px) {
+  h1 {
+    font-size: var(--font-size-30);
+    margin-top: 40px;
+  }
+  h2 {
+    font-size: var(--font-size-24);
+    margin-top: 40px;
+  }
+  h3 {
+    font-size: var(--font-size-20);
+  }
+}
