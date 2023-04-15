@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css'
 import Header from '../components/Header.astro'
+import NavLink from '../components/NavLink.astro'
 ---
 
 <!DOCTYPE html>
@@ -16,7 +17,8 @@ import Header from '../components/Header.astro'
     <div>
       <Header />
       <nav class="layout-center">
-        <a href="/">Inici</a>
+        <NavLink href="/">Inici</NavLink>
+        <NavLink href="/llista">Llista</NavLink>
       </nav>
       <main>
         <slot />

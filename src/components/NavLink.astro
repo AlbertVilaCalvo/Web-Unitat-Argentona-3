@@ -1,0 +1,37 @@
+---
+interface Props {
+  href: string
+  children: any
+}
+
+const { href } = Astro.props
+
+const pathname = new URL(Astro.request.url).pathname
+const isActive = href === pathname
+---
+
+<a href={href} class={`nav-link ${isActive && 'nav-link-active'}`}>
+  <slot />
+</a>
+
+<style>
+  .nav-link {
+    padding: 4px var(--layout-content-margin-0_5);
+    text-decoration: none;
+    color: black;
+  }
+
+  .nav-link:hover,
+  .nav-link-active {
+    color: white;
+    text-decoration: underline;
+    text-decoration-thickness: var(--layout-border);
+  }
+
+  @media all and (min-width: 768px) {
+    .nav-link {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+</style>
