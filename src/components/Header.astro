@@ -1,3 +1,7 @@
+---
+import { SITE_TITLE } from '../constants'
+---
+
 <header class="layout-center">
   <a
     href="/"
@@ -9,10 +13,10 @@
   >
     <img
       src={'/estrella-unitat.svg'}
-      alt="Logo estrella Unitat · Argentona per la República"
+      alt={`Logo estrella ${SITE_TITLE}}`}
       class="logo-estrella"
     />
-    <span class="titol-unitat">Unitat · Argentona per la República</span>
+    <span class="titol-unitat">{SITE_TITLE}</span>
   </a>
 </header>
 
