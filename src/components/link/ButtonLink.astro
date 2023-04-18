@@ -1,0 +1,66 @@
+---
+interface Props {
+  href: string
+  color?: 'turquesa' | 'gray' | 'groc'
+  className?: string
+  children: any
+}
+
+const { href, color = 'gray', className } = Astro.props
+
+const colorClass = `color-${color}`
+---
+
+<a
+  href={href}
+  class:list={['container', colorClass, { className: !!className }]}
+>
+  <slot />
+</a>
+
+<style>
+  .container {
+    display: inline-flex; /* In the future we should use 'inline flex' - see https://developer.mozilla.org/en-US/docs/Web/CSS/display/two-value_syntax_of_display */
+    /* Instead of 'display: inline flex' we could use 'width: fit-content;' but is less supported: https://caniuse.com/#search=fit-content */
+    flex-direction: row;
+    align-items: center;
+    padding: var(--layout-content-margin-0_5) var(--layout-content-margin);
+    text-decoration: none;
+  }
+
+  .arrow {
+    margin-right: var(--layout-content-margin-0_5);
+  }
+
+  /* Color styles */
+
+  /* turquesa */
+
+  .color-turquesa {
+    background-color: var(--color-turquesa3);
+  }
+
+  .color-turquesa:hover {
+    background-color: var(--color-turquesa2);
+  }
+
+  /* gray */
+
+  .color-gray {
+    background-color: var(--color-gray2);
+  }
+
+  .color-gray:hover {
+    background-color: var(--color-gray3);
+  }
+
+  /* groc */
+
+  .color-groc {
+    background-color: var(--color-groc3);
+  }
+
+  .color-groc:hover {
+    background-color: var(--color-groc2);
+  }
+</style>

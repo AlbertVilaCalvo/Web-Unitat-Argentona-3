@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content'
 import MainLayout from '../layouts/MainLayout.astro'
 import BlogPostList from '../components/blog/BlogPostList.astro'
+import ButtonLink from '../components/link/ButtonLink.astro'
 
 const allPosts = await getCollection('blog')
 const latestPosts = allPosts.reverse().slice(0, 3)
@@ -15,6 +16,6 @@ const latestPosts = allPosts.reverse().slice(0, 3)
   <section class="layout-center-with-margin">
     <h2>Novetats</h2>
     <BlogPostList posts={latestPosts} headingLevel={3} />
-    <!-- TODO més noticies link -->
+    <ButtonLink href="/blog">Més articles</ButtonLink>
   </section>
 </MainLayout>
