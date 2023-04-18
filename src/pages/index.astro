@@ -1,10 +1,20 @@
 ---
+import { getCollection } from 'astro:content'
 import MainLayout from '../layouts/MainLayout.astro'
+import BlogPostList from '../components/blog/BlogPostList.astro'
+
+const allPosts = await getCollection('blog')
+const latestPosts = allPosts.reverse().slice(0, 3)
 ---
 
 <MainLayout>
   <section class="layout-center-with-margin">
     <h1>Inici</h1>
     <p>Benvingut/da!</p>
+  </section>
+  <section class="layout-center-with-margin">
+    <h2>Novetats</h2>
+    <BlogPostList posts={latestPosts} headingLevel={3} />
+    <!-- TODO més noticies link -->
   </section>
 </MainLayout>

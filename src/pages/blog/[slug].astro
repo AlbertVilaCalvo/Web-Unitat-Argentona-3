@@ -1,0 +1,78 @@
+---
+import { CollectionEntry, getCollection } from 'astro:content'
+import MainLayout from '../../layouts/MainLayout.astro'
+
+// See alternative way to type getStaticPaths at https://docs.astro.build/en/guides/typescript/#infer-getstaticpaths-types
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog')
+  return blogEntries.map((post: CollectionEntry<'blog'>) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }))
+}
+
+interface Props {
+  post: CollectionEntry<'blog'>
+}
+
+const { post } = Astro.props as Props
+const { Content } = await post.render()
+---
+
+<MainLayout>
+  <section class="layout-center-with-margin">
+    <article>
+      <h1>{post.data.title}</h1>
+      <time class="date" datetime={post.data.date.toISOString()}>
+        {
+          post.data.date.toLocaleDateString('ca-ES', {
+            dateStyle: 'full',
+          })
+        }
+      </time>
+      <div class="content">
+        <Content />
+      </div>
+    </article>
+    <!-- TODO previous/next post link -->
+  </section>
+</MainLayout>
+
+<style>
+  .date {
+    display: block;
+    margin-top: var(--layout-content-margin-0_5);
+  }
+
+  .content {
+    margin-top: var(--layout-content-margin);
+    line-height: var(--line-height-full-width-paragraph);
+    background-color: var(--color-gray2);
+    padding: var(--layout-content-margin);
+  }
+
+  .content :global(p) {
+    margin-bottom: var(--layout-content-margin-0_75);
+  }
+  .content :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  /*
+  .prev-next-links-container {
+    margin-top: var(--layout-content-margin-1_5);
+    display: flex;
+    !* TODO maybe we should add flex-wrap: wrap; *!
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .prev-link {
+    margin-right: var(--layout-content-margin-0_5);
+  }
+
+  .next-link {
+    margin-left: auto;
+  }
+  */
+</style>

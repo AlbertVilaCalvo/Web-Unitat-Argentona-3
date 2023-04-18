@@ -1,0 +1,64 @@
+---
+import type { BlogPost } from '../../content/config'
+import type { CollectionEntry } from 'astro:content'
+
+interface Props {
+  slug: string
+  frontmatter: BlogPost
+  frontmatter2?: CollectionEntry<'blog'>['data']
+  headingLevel: 2 | 3
+}
+
+const { slug, frontmatter, headingLevel } = Astro.props
+const Heading = headingLevel === 2 ? 'h2' : 'h3'
+---
+
+<article class="outer-container">
+  <a href={`/blog/${slug}`} class="inner-container link">
+    <Heading class="heading">{frontmatter.title}</Heading>
+    <time datetime={frontmatter.date.toISOString()} class="date">
+      {
+        frontmatter.date.toLocaleDateString('ca-ES', {
+          dateStyle: 'short',
+        })
+      }
+    </time>
+    <!-- <p class="content">{excerpt}</p> -->
+  </a>
+</article>
+
+<style>
+  .outer-container {
+    background-color: var(--color-gray2);
+    margin-top: var(--layout-content-margin-0_5);
+    margin-bottom: var(--layout-content-margin);
+  }
+
+  .outer-container:hover {
+    background-color: var(--color-gray3);
+  }
+
+  .inner-container {
+    padding: var(--layout-content-margin);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .link {
+    text-decoration: none;
+  }
+
+  .heading {
+    margin-top: 0;
+  }
+
+  .date {
+    display: block;
+    margin-top: var(--layout-content-margin-0_5);
+  }
+
+  .content {
+    margin-top: var(--layout-content-margin-0_5);
+    line-height: var(--line-height-full-width-paragraph);
+  }
+</style>

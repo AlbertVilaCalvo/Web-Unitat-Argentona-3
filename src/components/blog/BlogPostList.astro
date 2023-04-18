@@ -1,0 +1,21 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import BlogPostListItem from './BlogPostListItem.astro'
+
+interface Props {
+  posts: CollectionEntry<'blog'>[]
+  headingLevel: 2 | 3
+}
+
+const { posts, headingLevel } = Astro.props
+---
+
+{
+  posts.map((post) => (
+    <BlogPostListItem
+      slug={post.slug}
+      frontmatter={post.data}
+      headingLevel={headingLevel}
+    />
+  ))
+}

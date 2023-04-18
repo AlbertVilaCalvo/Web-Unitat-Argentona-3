@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content'
+import MainLayout from '../layouts/MainLayout.astro'
+import BlogPostList from '../components/blog/BlogPostList.astro'
+
+const allPosts = (await getCollection('blog')).reverse()
+---
+
+<MainLayout>
+  <section class="layout-center-with-margin">
+    <h1>Blog</h1>
+    <BlogPostList posts={allPosts} headingLevel={2} />
+    {/* TODO previous/next page link */}
+  </section>
+</MainLayout>
+
+<style>
+  .prev-next-links-container {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .prev-next-link {
+    text-decoration: none;
+  }
+</style>
