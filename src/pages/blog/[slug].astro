@@ -1,16 +1,19 @@
 ---
+import type { GetStaticPaths } from 'astro'
 import { CollectionEntry, getCollection } from 'astro:content'
 import MainLayout from '../../layouts/MainLayout.astro'
 
-// See alternative way to type getStaticPaths at https://docs.astro.build/en/guides/typescript/#infer-getstaticpaths-types
-export async function getStaticPaths() {
+export const getStaticPaths = (async () => {
   const blogEntries = await getCollection('blog')
   return blogEntries.map((post: CollectionEntry<'blog'>) => ({
     params: { slug: post.slug },
     props: { post },
   }))
-}
+}) satisfies GetStaticPaths
 
+// See alternative way to get the type of Props at
+// https://docs.astro.build/en/guides/typescript/#infer-getstaticpaths-types
+// (works in VSCode but not in WebStorm)
 interface Props {
   post: CollectionEntry<'blog'>
 }
