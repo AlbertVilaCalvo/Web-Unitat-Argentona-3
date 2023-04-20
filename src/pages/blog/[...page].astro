@@ -23,7 +23,7 @@ const { page } = Astro.props
 const posts = page.data
 ---
 
-<MainLayout>
+<MainLayout title="Blog">
   <section class="layout-center-with-margin">
     <h1>Blog</h1>
     <BlogPostList posts={posts} headingLevel={2} />

@@ -8,7 +8,7 @@ const allPosts = await getCollection('blog')
 const latestPosts = allPosts.reverse().slice(0, 3)
 ---
 
-<MainLayout>
+<MainLayout title={null}>
   <section class="layout-center-with-margin">
     <h1>Inici</h1>
     <p>Benvingut/da!</p>
