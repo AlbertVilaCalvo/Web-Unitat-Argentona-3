@@ -1,0 +1,66 @@
+---
+// We use [...page].astro instead of [page].astro because it generates the URLs
+// /blog, /blog/2, /blog/3 instead of /blog/1, /blog/2, /blog/3.
+// See https://docs.astro.build/en/reference/api-reference/#paginate
+
+import type { GetStaticPaths, Page } from 'astro'
+import { CollectionEntry, getCollection } from 'astro:content'
+import MainLayout from '../../layouts/MainLayout.astro'
+import BlogPostList from '../../components/blog/BlogPostList.astro'
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const allPosts = (await getCollection('blog')).reverse()
+  return paginate(allPosts, { pageSize: 4 })
+}) satisfies GetStaticPaths
+
+// Page fields: https://docs.astro.build/en/core-concepts/routing/#complete-api-reference
+// https://docs.astro.build/en/reference/api-reference/#the-pagination-page-prop
+interface Props {
+  page: Page<CollectionEntry<'blog'>>
+}
+
+const { page } = Astro.props
+const posts = page.data
+---
+
+<MainLayout>
+  <section class="layout-center-with-margin">
+    <h1>Blog</h1>
+    <BlogPostList posts={posts} headingLevel={2} />
+
+    {
+      /* TODO this should use gray buttons like next-prev noticia, aligned left/right */
+      /* TODO we could show the page number with page.currentPage / page.total */
+    }
+    <div class="prev-next-links-container">
+      {
+        page.url.prev ? (
+          <a href={page.url.prev} rel="prev" class="prev-next-link">
+            ← Pàgina Anterior
+          </a>
+        ) : null
+      }
+      {
+        page.url.next ? (
+          <a href={page.url.next} rel="next" class="prev-next-link">
+            Pàgina Següent →
+          </a>
+        ) : null
+      }
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .prev-next-links-container {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--layout-content-margin);
+  }
+
+  .prev-next-link {
+    text-decoration: none;
+  }
+</style>
