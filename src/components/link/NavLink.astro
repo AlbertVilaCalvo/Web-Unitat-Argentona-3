@@ -6,8 +6,8 @@ interface Props {
 
 const { href } = Astro.props
 
-const pathname = new URL(Astro.request.url).pathname
-const isActive = href === pathname
+const isActive =
+  href.substring(1) === Astro.url.pathname.substring(1).split('/')[0]
 ---
 
 <a href={href} class:list={['nav-link', { 'nav-link-active': isActive }]}>
