@@ -1,0 +1,8 @@
+# Docs: https://docs.netlify.com/routing/redirects/
+
+# Validate: https://play.netlify.com/redirects
+
+# The _redirects file must be on the root of the folder that gets published.
+# "Save a plain text file called _redirects to the publish directory of your site."
+
+https://unitatargentona.netlify.app/* https://unitatargentona.cat/:splat 301!
