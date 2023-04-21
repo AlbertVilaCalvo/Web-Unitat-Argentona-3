@@ -1,7 +1,16 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro'
+import { llista2023 } from '../data/llista2023'
 ---
 
 <MainLayout title="Llista">
-  <h1>Llista</h1>
+  <section class="layout-center">
+    <h1 class="layout-center-with-margin">Llista</h1>
+    <p class="layout-center-with-margin">
+      Eleccions municipals de maig de 2023
+    </p>
+    <ol>
+      {llista2023.map((candidat) => <li>{candidat.nom}</li>)}
+    </ol>
+  </section>
 </MainLayout>
