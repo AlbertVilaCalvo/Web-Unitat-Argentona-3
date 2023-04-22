@@ -3,15 +3,27 @@ import { getPostsSorted } from '../utils'
 import MainLayout from '../layouts/MainLayout.astro'
 import BlogPostList from '../components/blog/BlogPostList.astro'
 import ButtonLink from '../components/link/ButtonLink.astro'
+import { cloudinary } from '../misc/cloudinary'
+import { Resize } from '@cloudinary/url-gen/actions'
 
 const allPosts = await getPostsSorted()
 const latestPosts = allPosts.slice(0, 3)
+
+const carrerImage: string = cloudinary
+  .image('Unitat/DSC02847c_copia')
+  .resize(
+    Resize.fill()
+      .width(860 * 2)
+      .height(290 * 2)
+  )
+  .toURL()
 ---
 
 <MainLayout title={null}>
   <section class="layout-center-with-margin">
     <h1>Inici</h1>
     <p>Benvingut/da!</p>
+    <img src={carrerImage} alt="Tots caminant carrer gran amunt" width="100%" />
   </section>
   <section class="layout-center-with-margin">
     <h2>Novetats</h2>
