@@ -4,13 +4,14 @@
 // See https://docs.astro.build/en/reference/api-reference/#paginate
 
 import type { GetStaticPaths, Page } from 'astro'
-import { CollectionEntry, getCollection } from 'astro:content'
+import type { CollectionEntry } from 'astro:content'
+import { getPostsSorted } from '../../utils'
 import MainLayout from '../../layouts/MainLayout.astro'
 import BlogPostList from '../../components/blog/BlogPostList.astro'
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const allPosts = (await getCollection('blog')).reverse()
-  return paginate(allPosts, { pageSize: 4 })
+  const posts = await getPostsSorted()
+  return paginate(posts, { pageSize: 4 })
 }) satisfies GetStaticPaths
 
 // Page fields: https://docs.astro.build/en/core-concepts/routing/#complete-api-reference

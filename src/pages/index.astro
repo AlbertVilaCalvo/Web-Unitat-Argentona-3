@@ -1,11 +1,11 @@
 ---
-import { getCollection } from 'astro:content'
+import { getPostsSorted } from '../utils'
 import MainLayout from '../layouts/MainLayout.astro'
 import BlogPostList from '../components/blog/BlogPostList.astro'
 import ButtonLink from '../components/link/ButtonLink.astro'
 
-const allPosts = await getCollection('blog')
-const latestPosts = allPosts.reverse().slice(0, 3)
+const allPosts = await getPostsSorted()
+const latestPosts = allPosts.slice(0, 3)
 ---
 
 <MainLayout title={null}>
