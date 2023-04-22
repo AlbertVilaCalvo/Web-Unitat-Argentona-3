@@ -6,8 +6,12 @@ interface Props {
 
 const { href } = Astro.props
 
+// '.html' at the end of the URL
+const htmlRegex: RegExp = /(.html)$/
+
 const isActive =
-  href.substring(1) === Astro.url.pathname.substring(1).split('/')[0]
+  href.substring(1) ===
+  Astro.url.pathname.substring(1).replace(htmlRegex, '').split('/')[0]
 ---
 
 <a href={href} class:list={['nav-link', { 'nav-link-active': isActive }]}>
