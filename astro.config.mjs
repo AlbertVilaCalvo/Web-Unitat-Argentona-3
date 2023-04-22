@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config'
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://unitatargentona.cat',
   build: {
     // We don't want trailing slashes (ie /llista/). Netlify adds a trailing
     // slash if we generate /llista/index.html instead of /llista.html, see
