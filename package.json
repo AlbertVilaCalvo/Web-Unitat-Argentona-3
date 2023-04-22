@@ -11,6 +11,7 @@
     "check": "astro check && tsc --noEmit"
   },
   "dependencies": {
+    "@cloudinary/url-gen": "1.10.0",
     "astro": "2.3.0"
   },
   "devDependencies": {
