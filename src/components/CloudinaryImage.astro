@@ -1,0 +1,31 @@
+---
+import type { CloudinaryImageId } from '../misc/cloudinary'
+import type { HTMLAttributes } from 'astro/types'
+import { cloudinary } from '../misc/cloudinary'
+import { Resize } from '@cloudinary/url-gen/actions'
+
+type Props = Omit<HTMLAttributes<'img'>, 'src'> & {
+  id: CloudinaryImageId
+  resizeWidth?: number
+  resizeHeight?: number
+}
+const props = Astro.props
+
+let image = cloudinary.image(`Unitat/${props.id}`)
+
+if (props.resizeWidth && props.resizeHeight) {
+  image = image.resize(
+    Resize.fill()
+      .width(props.resizeWidth * 2)
+      .height(props.resizeHeight * 2)
+  )
+} else if (props.resizeWidth) {
+  image = image.resize(Resize.fill().width(props.resizeWidth * 2))
+} else if (props.resizeHeight) {
+  image = image.resize(Resize.fill().height(props.resizeHeight * 2))
+}
+
+const imageUrl = image.toURL()
+---
+
+<img src={imageUrl} loading="lazy" {...props} />
