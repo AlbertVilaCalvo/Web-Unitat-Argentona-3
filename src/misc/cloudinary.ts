@@ -4,7 +4,7 @@ export const cloudinary = new Cloudinary({ cloud: { cloudName: 'albertvila' } })
 
 export type CloudinaryImageId =
   // 2023-02-25-sessio-fotos-carrer
-  | 'DSC02847c_copia'
+  | '2023-02-25-sessio-fotos-carrer/DSC02847c_copia'
   // 2023-llista-frontal
   | '2023-llista-frontal/1_DSC02904'
   | '2023-llista-frontal/2_DSC02769b1'
