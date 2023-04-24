@@ -1,16 +1,46 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro'
+import CloudinaryImage from '../components/CloudinaryImage.astro'
 import { llista2023 } from '../data/llista2023'
 ---
 
 <MainLayout title="Llista">
-  <section class="layout-center">
-    <h1 class="layout-center-with-margin">Llista</h1>
-    <p class="layout-center-with-margin">
-      Eleccions municipals de maig de 2023
-    </p>
-    <ol>
-      {llista2023.map((candidat) => <li>{candidat.nom}</li>)}
+  <section class="layout-center-with-margin">
+    <h1>Llista</h1>
+    <p>Eleccions municipals de maig de 2023</p>
+    <ol class="llista-container">
+      {
+        llista2023.map((candidat) => (
+          <li class="llista-item">
+            <CloudinaryImage
+              id={candidat.image}
+              resizeWidth={500}
+              width="100%"
+            />
+            <p class="nom">{candidat.nom}</p>
+          </li>
+        ))
+      }
     </ol>
   </section>
 </MainLayout>
+
+<style>
+  .llista-container {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-gap: var(--layout-content-margin);
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  }
+
+  .llista-item {
+    background-color: #5ab6a1;
+    width: 100%;
+  }
+
+  .nom {
+    margin: var(--layout-content-margin-0_5);
+    padding: 0;
+  }
+</style>
