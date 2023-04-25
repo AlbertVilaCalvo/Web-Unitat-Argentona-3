@@ -9,20 +9,20 @@ type Props = Omit<HTMLAttributes<'img'>, 'src'> & {
   resizeWidth?: number
   resizeHeight?: number
 }
-const props = Astro.props
+const { id, resizeWidth, resizeHeight, ...props } = Astro.props
 
-let image = cloudinary.image(`Unitat/${props.id}`)
+let image = cloudinary.image(`Unitat/${id}`)
 
-if (props.resizeWidth && props.resizeHeight) {
+if (resizeWidth && resizeHeight) {
   image = image.resize(
     Resize.fill()
-      .width(props.resizeWidth * 2)
-      .height(props.resizeHeight * 2)
+      .width(resizeWidth * 2)
+      .height(resizeHeight * 2)
   )
-} else if (props.resizeWidth) {
-  image = image.resize(Resize.fill().width(props.resizeWidth * 2))
-} else if (props.resizeHeight) {
-  image = image.resize(Resize.fill().height(props.resizeHeight * 2))
+} else if (resizeWidth) {
+  image = image.resize(Resize.fill().width(resizeWidth * 2))
+} else if (resizeHeight) {
+  image = image.resize(Resize.fill().height(resizeHeight * 2))
 }
 
 const imageUrl = image.toURL()
