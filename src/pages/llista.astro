@@ -10,13 +10,14 @@ import { llista2023 } from '../data/llista2023'
     <p>Eleccions municipals de maig de 2023</p>
     <ol class="llista-container">
       {
-        llista2023.map((candidat) => (
+        llista2023.map((candidat, index) => (
           <li class="llista-item">
             <CloudinaryImage
               id={candidat.image}
-              resizeWidth={500}
-              width="100%"
-              loading="lazy"
+              alt={candidat.nom}
+              resizeWidth={400}
+              class="image"
+              loading={index > 3 ? 'lazy' : 'eager'}
             />
             <p class="nom">{candidat.nom}</p>
           </li>
@@ -38,6 +39,12 @@ import { llista2023 } from '../data/llista2023'
   .llista-item {
     background-color: #5ab6a1;
     width: 100%;
+  }
+
+  .image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3648/5472;
   }
 
   .nom {
