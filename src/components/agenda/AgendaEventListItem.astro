@@ -1,0 +1,48 @@
+---
+import type { CollectionEntry } from 'astro:content'
+
+interface Props {
+  event: CollectionEntry<'agenda'>
+  headingLevel: 2 | 3
+}
+
+const { event, headingLevel } = Astro.props as Props
+const Heading = headingLevel === 2 ? 'h2' : 'h3'
+---
+
+<article class="container">
+  <Heading class="heading">{event.data.title}</Heading>
+  <time datetime={event.data.date.toISOString()} class="date">
+    {
+      event.data.date
+        .toLocaleString('ca-ES', {
+          dateStyle: 'full',
+          timeStyle: 'short',
+        })
+        .toUpperCase()
+    }
+  </time>
+  <p class="lloc">{event.data.lloc}</p>
+</article>
+
+<style>
+  .container {
+    background-color: var(--color-groc);
+    margin-top: var(--layout-content-margin-0_5);
+    margin-bottom: var(--layout-content-margin);
+    padding: var(--layout-content-margin);
+  }
+
+  .heading {
+    margin-top: 0;
+  }
+
+  .date {
+    display: block;
+    margin-top: var(--layout-content-margin-0_5);
+  }
+
+  .lloc {
+    margin-top: var(--layout-content-margin-0_5);
+  }
+</style>

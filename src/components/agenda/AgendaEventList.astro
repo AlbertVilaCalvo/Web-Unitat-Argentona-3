@@ -1,0 +1,17 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import AgendaEventListItem from './AgendaEventListItem.astro'
+
+interface Props {
+  events: CollectionEntry<'agenda'>[]
+  headingLevel: 2 | 3
+}
+
+const { events, headingLevel } = Astro.props
+---
+
+{
+  events.map((event) => (
+    <AgendaEventListItem event={event} headingLevel={headingLevel} />
+  ))
+}

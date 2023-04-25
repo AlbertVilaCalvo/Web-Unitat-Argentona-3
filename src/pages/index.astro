@@ -1,9 +1,12 @@
 ---
-import { getPostsSorted } from '../utils'
+import { getNextAgendaEvents, getPostsSorted } from '../utils'
 import MainLayout from '../layouts/MainLayout.astro'
 import CloudinaryImage from '../components/CloudinaryImage.astro'
+import AgendaEventList from '../components/agenda/AgendaEventList.astro'
 import BlogPostList from '../components/blog/BlogPostList.astro'
 import ButtonLink from '../components/link/ButtonLink.astro'
+
+const events = await getNextAgendaEvents()
 
 const allPosts = await getPostsSorted()
 const latestPosts = allPosts.slice(0, 3)
@@ -22,6 +25,10 @@ const latestPosts = allPosts.slice(0, 3)
       height="auto"
       style={'aspect-ratio: 860/290'}
     />
+  </section>
+  <section class="layout-center-with-margin">
+    <h2>Agenda</h2>
+    <AgendaEventList events={events} headingLevel={3} />
   </section>
   <section class="layout-center-with-margin">
     <h2>Novetats</h2>
