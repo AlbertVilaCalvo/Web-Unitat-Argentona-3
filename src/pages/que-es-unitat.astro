@@ -1,10 +1,17 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro'
+import CloudinaryImage from '../components/CloudinaryImage.astro'
 ---
 
 <MainLayout title="Què és Unitat?">
   <section class="layout-center-with-margin">
     <h1>Què és Unitat?</h1>
+    <CloudinaryImage
+      id="2023-02-25-sessio-fotos-carrer/DSC02853c"
+      alt="Foto Font de Sant Domènec"
+      class="image"
+      resizeWidth={860}
+    />
     <h2>Som independents</h2>
     <p>
       Unitat va nèixer com a una agrupació de partits, al voltant d’uns
@@ -55,6 +62,12 @@ import MainLayout from '../layouts/MainLayout.astro'
       republicans, humanistes, igualitaris, que no facin discriminacions per raó
       de gènere, de cultura, d’ètnia o de creences.
     </p>
+    <CloudinaryImage
+      id="2023-02-25-sessio-fotos-carrer/DSC02859c"
+      alt="Foto Font de Sant Domènec"
+      class="image"
+      resizeWidth={860}
+    />
     <h2>Estem enamorats d’Argentona</h2>
     <p>
       Un lloc on la gent viu bé i un entorn agradable. Dues coses que volem
@@ -95,6 +108,13 @@ import MainLayout from '../layouts/MainLayout.astro'
 
 <style>
   p {
-    margin-top: var(--layout-content-margin-0_75);
+    margin-top: var(--layout-content-margin);
+  }
+
+  .image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 5472/3648;
+    margin-top: var(--layout-content-margin);
   }
 </style>
