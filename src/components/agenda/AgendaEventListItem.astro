@@ -8,6 +8,7 @@ interface Props {
 
 const { event, headingLevel } = Astro.props as Props
 const Heading = headingLevel === 2 ? 'h2' : 'h3'
+const { Content } = await event.render()
 ---
 
 <article class="container">
@@ -24,6 +25,13 @@ const Heading = headingLevel === 2 ? 'h2' : 'h3'
     }
   </time>
   <p class="lloc">{event.data.lloc}</p>
+  {
+    event.body && (
+      <div class="content">
+        <Content />
+      </div>
+    )
+  }
 </article>
 
 <style>
@@ -45,5 +53,9 @@ const Heading = headingLevel === 2 ? 'h2' : 'h3'
 
   .lloc {
     margin-top: var(--layout-content-margin-0_5);
+  }
+
+  .content :global(p) {
+    margin-top: var(--layout-content-margin-0_75);
   }
 </style>
