@@ -3,27 +3,37 @@ import '../styles/global.css'
 import Header from '../components/Header.astro'
 import NavLink from '../components/link/NavLink.astro'
 import Footer from '../components/Footer.astro'
-import { SITE_TITLE } from '../constants'
+import { SITE_DESCRIPTION, SITE_TITLE } from '../constants'
 
 interface Props {
   /* Should pass `null` on the home page only. */
   title: string | null
+  description?: string
+  image?: string
 }
 
-let { title } = Astro.props
+let { title, description, image } = Astro.props
 if (title === null) {
   title = SITE_TITLE
 } else {
   title = `${title} | ${SITE_TITLE}`
+}
+if (!description) {
+  description = SITE_DESCRIPTION
+}
+if (!image) {
+  image = '/estrella-unitat.svg'
 }
 ---
 
 <!DOCTYPE html>
 <html lang="ca">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta property="og:image" content={image} />
     <link rel="icon" type="image/svg+xml" href="/estrella-unitat.svg" />
     <title>{title}</title>
   </head>
