@@ -67,6 +67,7 @@ body {
   --layout-content-margin-0_5: calc(var(--layout-content-margin) / 2);
   --layout-content-margin-0_25: calc(var(--layout-content-margin) / 4);
   --layout-content-margin-0_75: calc(3 * var(--layout-content-margin) / 4);
+  --layout-content-margin-1_25: calc(var(--layout-content-margin) * 1.25);
   --layout-content-margin-1_5: calc(var(--layout-content-margin) * 1.5);
   --layout-border: 2px;
 
