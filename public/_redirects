@@ -6,3 +6,5 @@
 # "Save a plain text file called _redirects to the publish directory of your site."
 
 https://unitatargentona.netlify.app/* https://unitatargentona.cat/:splat 301!
+
+https://web.unitatargentona.cat/* https://unitatargentona.cat/ 301!
