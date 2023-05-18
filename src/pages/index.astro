@@ -67,7 +67,13 @@ const latestPosts = allPosts.slice(0, 3)
     line-height: 0;
     display: grid;
     grid-gap: var(--layout-content-margin);
-    grid-template-columns: repeat(auto-fit, minmax(157px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media all and (min-width: 480px) {
+    .llista-container {
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
   }
 
   .llista-item {
