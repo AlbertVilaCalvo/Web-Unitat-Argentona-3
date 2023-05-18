@@ -5,6 +5,7 @@ import CloudinaryImage from '../components/CloudinaryImage.astro'
 import AgendaEventList from '../components/agenda/AgendaEventList.astro'
 import BlogPostList from '../components/blog/BlogPostList.astro'
 import ButtonLink from '../components/link/ButtonLink.astro'
+import { llista2023 } from '../data/llista2023'
 
 const events = await getNextAgendaEvents()
 
@@ -13,9 +14,7 @@ const latestPosts = allPosts.slice(0, 3)
 ---
 
 <MainLayout title={null}>
-  <section class="layout-center-with-margin">
-    <h1>Inici</h1>
-    <p>Benvingut/da!</p>
+  <section class="layout-center">
     <CloudinaryImage
       id="2023-02-25-sessio-fotos-carrer/DSC02847c_copia"
       alt="Tots caminant carrer gran amunt"
@@ -27,6 +26,30 @@ const latestPosts = allPosts.slice(0, 3)
     />
   </section>
   <section class="layout-center-with-margin">
+    <h2>Llista</h2>
+    <ol class="llista-container">
+      {
+        llista2023.slice(0, 16).map((candidat, index) => {
+          return (
+            <li class="llista-item">
+              <CloudinaryImage
+                id={candidat.imageCercle}
+                alt={candidat.nom}
+                resizeWidth={800}
+                resizeHeight={800}
+                class="image"
+                loading={index >= 8 ? 'lazy' : 'eager'}
+              />
+            </li>
+          )
+        })
+      }
+    </ol>
+    <ButtonLink href="/llista" color="vermell">
+      Coneix el nostre equip
+    </ButtonLink>
+  </section>
+  <section class="layout-center-with-margin">
     <h2>Agenda</h2>
     <AgendaEventList events={events} headingLevel={3} />
   </section>
@@ -36,3 +59,24 @@ const latestPosts = allPosts.slice(0, 3)
     <ButtonLink href="/blog" color="turquesa">Més articles</ButtonLink>
   </section>
 </MainLayout>
+
+<style>
+  .llista-container {
+    list-style-type: none;
+    padding: 0;
+    line-height: 0;
+    display: grid;
+    grid-gap: var(--layout-content-margin);
+    grid-template-columns: repeat(auto-fit, minmax(157px, 1fr));
+  }
+
+  .llista-item {
+    width: 100%;
+  }
+
+  .image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+  }
+</style>
