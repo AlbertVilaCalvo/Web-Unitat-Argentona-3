@@ -24,7 +24,7 @@ export const llista2023: Candidat[] = [
     nom: 'Joan Boba',
     imageFrontal: '2023-llista-frontal/3_DSC02803b_opt',
     imageCercle: '2023-llista-cercle/3_DSC02803b-min',
-    bio: `Empresari d’arts gràfiques. Va ser patró de la Fundació El Maresme i va presidir l’Associació de Pares de la Fundació El Maresme. Va ser també fundador de l’Escola d’Educació Especial Les Aigües on va presidir l’Associació de Pares. Li agrada fer caminades, la jardineria i li encanta fer passejades amb el seu gos. Ha estat membre en diverses legislatures de la Comissió de Participació Ciutadana, del Consell de la Vila i de la Comissió de Mitjans de Comunicació Municipals. Col.labora amb el Centre Parroquial.`,
+    bio: `Empresari d’arts gràfiques. Va ser patró de la Fundació El Maresme i va presidir l’Associació de Pares de la Fundació El Maresme. Va ser també fundador de l’Escola d’Educació Especial Les Aigües on va presidir l’Associació de Pares. Li agrada fer caminades, la jardineria i el teatre. Ha estat membre en diverses legislatures de la Comissió de Participació Ciutadana, del Consell de la Vila i de la Comissió de Mitjans de Comunicació Municipals. Col.labora amb el Centre Parroquial.`,
   },
   {
     nom: 'Isabel Lladó',
