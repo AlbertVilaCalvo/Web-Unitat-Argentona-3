@@ -48,7 +48,7 @@ export const llista2023: Candidat[] = [
     nom: 'Eusebi Traby',
     imageFrontal: '2023-llista-frontal/7_DSC02755_opt',
     imageCercle: '2023-llista-cercle/7_DSC02755-min',
-    bio: `Graduat Social. Seminaris de gestió de personal. Li agrada la cuina i anar a buscar bolets. En l’àmbit de la política municipal ha estat regidor de l’Ajuntament d’Argentona (                 ), conseller de la Companyia d'Aigües d'Argentona durant 6 anys, integrant de la Comissió especial de comptes de l'Ajuntament d'Argentona i membre de l’Àrea de Mitjans de Comunicació d'Argentona. És soci de l'associació de veïns d'Argentona. Integrant de la Junta de l'Associació de veïns de les Ginesteres.`,
+    bio: `Graduat Social. Seminaris de gestió de personal. Li agrada la cuina i anar a buscar bolets. En l’àmbit de la política municipal ha estat regidor de l’Ajuntament d’Argentona, conseller de la Companyia d'Aigües d'Argentona durant 6 anys, integrant de la Comissió especial de comptes de l'Ajuntament d'Argentona i membre de l’Àrea de Mitjans de Comunicació d'Argentona. És soci de l'associació de veïns d'Argentona. Integrant de la Junta de l'Associació de veïns de les Ginesteres.`,
   },
   {
     nom: 'Araceli Ferrer',
@@ -78,13 +78,13 @@ export const llista2023: Candidat[] = [
     nom: 'Eli Guirado',
     imageFrontal: '2023-llista-frontal/12_DSC03195',
     imageCercle: '2023-llista-cercle/12_DSC03195-min',
-    bio: ``,
+    bio: `Graduada en Relacions Públiques i Llicenciada en Publicitat i Relacions Públiques per la UB. Actualment ha emprès un negoci i col·labora amb una empresa familiar austríaca de cosmètica ecològica, vegana i sostenible. Li agrada cuinar -i tot el que té a veure amb la cuina saludable-, llegir, escriure i el ioga. Des de fa poc, forma part de la junta del veïnat de Les Ginesteres i va formar part de la comissió de festes d'aquest mateix veïnat.`,
   },
   {
     nom: 'Rosendo Domingo',
     imageFrontal: '2023-llista-frontal/13_DSC03178',
     imageCercle: '2023-llista-cercle/13_DSC03178-min',
-    bio: ``,
+    bio: `Veí de Can Cabot. Ex-president de l’Associació de Veïns i actual tresorer. Jubilat. Ha treballat en la restauració al restaurant La Colometa de Gràcia (Barcelona) i a Cala Montjoi. Aficionat a la natura.`,
   },
   {
     nom: 'Montse Terricabras',
