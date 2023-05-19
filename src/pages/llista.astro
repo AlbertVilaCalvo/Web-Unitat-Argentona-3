@@ -17,9 +17,10 @@ import { llista2023 } from '../data/llista2023'
               alt={candidat.nom}
               resizeWidth={400}
               class="image"
-              loading={index > 3 ? 'lazy' : 'eager'}
+              loading={index >= 3 ? 'lazy' : 'eager'}
             />
             <p class="nom">{candidat.nom}</p>
+            <p class="bio">{candidat.bio}</p>
           </li>
         ))
       }
@@ -37,8 +38,9 @@ import { llista2023 } from '../data/llista2023'
   }
 
   .llista-item {
-    background-color: var(--color-turquesa);
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-groc);
   }
 
   .image {
@@ -48,7 +50,14 @@ import { llista2023 } from '../data/llista2023'
   }
 
   .nom {
-    margin: var(--layout-content-margin-0_5);
-    padding: 0;
+    margin: 0;
+    padding: var(--layout-content-margin-0_5);
+    background-color: var(--color-groc2);
+    font-weight: bold;
+    font-size: var(--font-size-24);
+  }
+
+  .bio {
+    padding: var(--layout-content-margin-0_5);
   }
 </style>
