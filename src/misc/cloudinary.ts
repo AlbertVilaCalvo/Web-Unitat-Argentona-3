@@ -7,6 +7,8 @@ export type CloudinaryImageId =
   | '2023-02-25-sessio-fotos-carrer/DSC02847c_copia'
   | '2023-02-25-sessio-fotos-carrer/DSC02853c'
   | '2023-02-25-sessio-fotos-carrer/DSC02859c'
+  // 2023-03-05-vermut-presentacio
+  | '2023-03-05-vermut-presentacio/DSC03151'
   // 2023-llista-frontal
   | '2023-llista-frontal/1_DSC02904'
   | '2023-llista-frontal/2_DSC02769b1'

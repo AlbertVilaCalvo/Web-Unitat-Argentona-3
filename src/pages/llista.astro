@@ -1,13 +1,14 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro'
 import CloudinaryImage from '../components/CloudinaryImage.astro'
-import { llista2023 } from '../data/llista2023'
+import { llista2023, suplents2023 } from '../data/llista2023'
 ---
 
 <MainLayout title="Llista">
   <section class="layout-center-with-margin">
     <h1>Llista</h1>
     <p>Eleccions municipals de maig de 2023</p>
+
     <ol class="llista-container">
       {
         llista2023.map((candidat, index) => (
@@ -21,6 +22,26 @@ import { llista2023 } from '../data/llista2023'
             />
             <p class="nom">{candidat.nom}</p>
             <p class="bio">{candidat.bio}</p>
+          </li>
+        ))
+      }
+    </ol>
+
+    <h2 class="suplents">Suplents</h2>
+    <CloudinaryImage
+      id="2023-03-05-vermut-presentacio/DSC03151"
+      alt="Suplents eleccions municipals 2023"
+      resizeWidth={860}
+      width="100%"
+      height="auto"
+      style={'aspect-ratio: 5472/3648'}
+    />
+    <ol class="llista-container">
+      {
+        suplents2023.map((suplent) => (
+          <li class="llista-item">
+            <p class="nom">{suplent.nom}</p>
+            <p class="bio">{suplent.bio}</p>
           </li>
         ))
       }
@@ -59,5 +80,9 @@ import { llista2023 } from '../data/llista2023'
 
   .bio {
     padding: var(--layout-content-margin-0_5);
+  }
+
+  .suplents {
+    margin-bottom: var(--layout-content-margin);
   }
 </style>

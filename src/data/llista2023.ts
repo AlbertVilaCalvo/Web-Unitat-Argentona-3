@@ -7,6 +7,8 @@ interface Candidat {
   bio: string
 }
 
+type Suplent = Omit<Candidat, 'imageCercle' | 'imageFrontal'>
+
 export const llista2023: Candidat[] = [
   {
     nom: 'Toni Segarra',
@@ -110,27 +112,35 @@ export const llista2023: Candidat[] = [
     imageCercle: '2023-llista-cercle/17_DSC03182-min',
     bio: `Ha sigut obrer de la FIAT i policia forestal. És pensionista. Activista. Participa en qualsevol forma de protesta en defensa dels drets humans, la justícia i la llibertat. La seva afició és la pesca lúdica. Ha col·laborat amb la Coordinadora en defensa de la Sanitat pública de Mataró. Voluntari ADF. Va començar al 68 amb la defensa dels drets de la dona a Itàlia.`,
   },
-  /*
+]
+
+export const suplents2023: Suplent[] = [
   {
     nom: 'Angelina Carbonell',
+    bio: `Als 18 anys va muntar un taller de modista on va exercir la professió fins als 35. Després d’unes oposicions, va entrar com administrativa a l’ICS,on hi va treballar 35 anys. El teatre ha estat la seva afició principal. I llegir i caminar, cosa que ha fet sempre. A finals dels anys 60, junt amb un grup de joves, va fundar el grup de teatre l’Estruc al poble. Col·labora amb el Consell per la República i l’ANC locals.`,
   },
   {
-    nom: 'Toni Martí',
+    nom: 'Antoni Martí',
+    bio: `Mestre de primària del 1962 al 1983 a Mataró i des de el 1983 al 2004 a Argentona. Director durant 4 anys de l'escola Bernat de Riudemeia. Soci fundador de la USTEC (Unió Sindical dels Treballadors d‘Ensenyament de Catalunya). És aficionat a viatjar, caminar pel bosc, el teatre i el cinema. Va ser co-fundador el 1989 del grup Rialles Argentona (antecessor de l'actual Xarxa d'espectacles infantil i juvenil) i membre de la junta fins el 2020.`,
   },
   {
     nom: 'Carme Famadas',
+    bio: `Va anar al col·legi de les monges “Immaculada Concepció” d’Argentona i allà va néixer la seva afició pel bàsquet. Va treballar a l’escola bressol El Gegant del Pi i a l’escola Francesc Burniol com a monitora. Li agrada anar amb bicicleta, activitat que practica habitualment, el cinema i el teatre. Amb l’equip del CIC (Col·legi Immaculada Concepció) van ser campiones d’Europa en categoria júnior dues vegades i, una vegada, sub-campiones. Posteriorment, jugant amb el CB. Mataró, l’equip va ser 3 vegades campió d’Espanya i, ella, a títol individual, va ser escollida, també 3 vegades, com a millor jugadora d’Espanya.`,
   },
   {
     nom: 'Ricard Aymerich',
+    bio: `Mestre i psicòleg. Ha treballat a les escoles Anxaneta i Montserrat Solà de Mataró (de les que n’ha sigut també director) i a l’Institut d’Argentona. Membre del Consell Escolar de Catalunya (des del 2006). Li agrada escoltar la música i tocar la guitarra, la lectura, la conversa, jugar amb els néts, les passejades amb bicicleta, el cinema, el teatre, les exposicions en qualsevol format artístic, el bricolatge domèstic… Ha estat regidor d’Educació d’Argentona (2006-2007). Ha format part del grup local de Rialles (més tard Xarxa d’espectacles). És soci del Centre d’Estudis Argentonins, dels Amics de Puig i Cadafalch i del Centre Parroquial.`,
   },
   {
     nom: 'Margarida Colomer',
+    bio: `Llicenciada en Història i Geografia per la UAB. Historiadora, ha escrit diversos llibres d’història local i de la comarca. Jubilada de mestra i de professora d’història i geografia a l’ensenyança secundària. Entre les seves aficions, teatre, lectura i música. Ha estat regidora de cultura-festes i d’ensenyament a l’Ajuntament d’Argentona per l’Entesa, de 1999-2003. És membre de la junta del Centre d’Estudis Argentonins Jaume Clavell, sòcia dels Amics de J. Puig i Cadafalch, dels Amics de la Poesia d’Argentona.`,
   },
   {
     nom: 'Pep Famadas',
+    bio: `Mestre, llicenciat en Pedagogia. Li agrada cuinar i anar a comprar en el petit comerç del poble. Va ser regidor en dues legislatures: per la CUPA en el primer ajuntament de la democràcia i també en el govern de l'Entesa. Co-fundador del Grup de Muntanya d’Argentona, entitat de la qual encara és membre actiu.`,
   },
   {
     nom: 'Cristina Navarro',
+    bio: `Actriu i mestra. Postgrau en Pedagogia en arts escèniques. Directora de l'Aula de Teatre de l'Ajuntament de Mataró. Li agrada viatjar per descobrir noves maneres i cultures, muntanya i mar per desconnectar, navegar perquè la fa sentir lliure. Va ser regidora de Cultura, Festes i Joventut al govern de l’Entesa, i 4 anys a l’oposició. Implicada en la política municipal per millorar la vida de les persones del seu poble.`,
   },
-  */
 ]
