@@ -84,7 +84,7 @@ export const llista2023: Candidat[] = [
     nom: 'Rosendo Domingo',
     imageFrontal: '2023-llista-frontal/13_DSC03178',
     imageCercle: '2023-llista-cercle/13_DSC03178-min',
-    bio: `Veí de Can Cabot. Ex-president de l’Associació de Veïns i actual tresorer. Jubilat. Ha treballat en la restauració al restaurant La Colometa de Gràcia (Barcelona) i a Cala Montjoi. Aficionat a la natura.`,
+    bio: `Veí de Can Cabot. Ex-president de l’Associació de Veïns i actual tresorer. Jubilat. Ha treballat en la restauració al restaurant La Colometa de Gràcia (Barcelona) i a Cala Monoys. Aficionat a la natura.`,
   },
   {
     nom: 'Montse Terricabras',
@@ -105,7 +105,7 @@ export const llista2023: Candidat[] = [
     bio: `Cuinera de professió i emprenedora. Cuinera a la Llar Santa Anna. Posteriorment, va fundar la seva pròpia empresa. Molt implicada en la vida pública del poble, disposada sempre a col·laborar i compartir amb les persones i entitats. Ha estat voluntària de la Parròquia al Centre Parroquial i és presidenta de la Coral Llaç d’Amistat. Actualment imparteix Tallers de cuina per a gent gran al Casal d’avis.`,
   },
   {
-    nom: 'Savino Rico',
+    nom: 'Savino Riccó',
     imageFrontal: '2023-llista-frontal/17_DSC03182',
     imageCercle: '2023-llista-cercle/17_DSC03182-min',
     bio: `Ha sigut obrer de la FIAT i policia forestal. És pensionista. Activista. Participa en qualsevol forma de protesta en defensa dels drets humans, la justícia i la llibertat. La seva afició és la pesca lúdica. Ha col·laborat amb la Coordinadora en defensa de la Sanitat pública de Mataró. Voluntari ADF. Va començar al 68 amb la defensa dels drets de la dona a Itàlia.`,
