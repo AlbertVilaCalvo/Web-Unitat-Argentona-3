@@ -24,6 +24,7 @@ const latestPosts = allPosts.slice(0, 3)
       style={'aspect-ratio: 860/290'}
     />
   </section>
+
   <section class="layout-center-with-margin">
     <h2>Llista</h2>
     <ol class="llista-container">
@@ -36,7 +37,7 @@ const latestPosts = allPosts.slice(0, 3)
                 alt={candidat.nom}
                 resizeWidth={270}
                 resizeHeight={270}
-                class="image"
+                class="llista-image"
                 loading={index >= 8 ? 'lazy' : 'eager'}
               />
             </li>
@@ -48,10 +49,76 @@ const latestPosts = allPosts.slice(0, 3)
       Coneix el nostre equip
     </ButtonLink>
   </section>
+
+  <section class="layout-center-with-margin">
+    <h2>Programa</h2>
+    <div class="colored-grid">
+      <div style={{ backgroundColor: 'var(--color-verd)' }}>
+        <p>
+          Impulsarem la construcció d'<strong>habitatge</strong> dotacional per a
+          joves i gent gran
+        </p>
+      </div>
+      <div style={{ backgroundColor: 'var(--color-groc)' }}>
+        <p>
+          Establirem plans anuals de <strong>manteniment</strong> de carrers, voreres
+          i espai públic en general
+        </p>
+      </div>
+      <div style={{ backgroundColor: 'var(--color-turquesa)' }}>
+        <p>
+          Dedicarem el màxim esforç a trobar el mes ampli consens per a fer
+          realitat el projecte de la <strong>Velcro</strong> que entre tots decidim
+        </p>
+      </div>
+      <div style={{ backgroundColor: 'var(--color-vermell)' }}>
+        <p>
+          Dissenyarem i construirem <strong>rutes escolars</strong> segures eliminant
+          barreres arquitectòniques
+        </p>
+      </div>
+      <div style={{ backgroundColor: 'var(--color-morat)' }}>
+        <p style={{ color: 'white' }}>
+          Executarem el projecte de la <strong>biblioteca</strong> amb aparcament
+        </p>
+      </div>
+      <div style={{ backgroundColor: 'var(--color-verd)' }}>
+        <p>
+          Posarem un responsable encarregat d'aconseguir una <strong
+            >organització</strong
+          > més àgil i eficaç de l'ajuntament
+        </p>
+      </div>
+      <div style={{ backgroundColor: 'var(--color-groc)' }}>
+        <p>
+          Farem una ordenança municipal, basada proves d'ADN, per eliminar dels
+          carrers les <strong>defecacions</strong> animals
+        </p>
+      </div>
+      <div style={{ backgroundColor: 'var(--color-turquesa)' }}>
+        <p>
+          Desenvoluparem <strong>El Collell</strong>, per a obtenir habitatge
+          protegit, equipaments i la connectivitat viària necessària
+        </p>
+      </div>
+      <div style={{ backgroundColor: 'var(--color-vermell)' }}>
+        <p>
+          Designarem una persona com a responsable de gestionar <strong
+            >subvencions</strong
+          > i obtenir recursos
+        </p>
+      </div>
+    </div>
+    <ButtonLink href="/programa" color="turquesa">
+      Consulta el nostre programa
+    </ButtonLink>
+  </section>
+
   <section class="layout-center-with-margin">
     <h2>Agenda</h2>
     <AgendaEventList events={events} headingLevel={3} />
   </section>
+
   <section class="layout-center-with-margin">
     <h2>Novetats</h2>
     <BlogPostList posts={latestPosts} headingLevel={3} />
@@ -81,9 +148,47 @@ const latestPosts = allPosts.slice(0, 3)
     width: 100%;
   }
 
-  .image {
+  .llista-image {
     width: 100%;
     height: auto;
     aspect-ratio: 1/1;
+  }
+
+  .colored-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;
+    margin-top: 15px;
+    margin-bottom: var(--layout-content-margin);
+  }
+
+  .colored-grid div {
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .colored-grid div:hover {
+    transform: scale(1.1);
+  }
+
+  .colored-grid p {
+    font-family: var(--font-family-serif);
+    font-size: var(--font-size-18);
+  }
+
+  @media all and (min-width: 480px) {
+    .colored-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media all and (min-width: 900px) {
+    .colored-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 </style>
