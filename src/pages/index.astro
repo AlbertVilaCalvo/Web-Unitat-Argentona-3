@@ -114,10 +114,14 @@ const latestPosts = allPosts.slice(0, 3)
     </ButtonLink>
   </section>
 
-  <section class="layout-center-with-margin">
-    <h2>Agenda</h2>
-    <AgendaEventList events={events} headingLevel={3} />
-  </section>
+  {
+    events.length > 0 && (
+      <section class="layout-center-with-margin">
+        <h2>Agenda</h2>
+        <AgendaEventList events={events} headingLevel={3} />
+      </section>
+    )
+  }
 
   <section class="layout-center-with-margin">
     <h2>Novetats</h2>
