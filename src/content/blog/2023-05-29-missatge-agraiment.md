@@ -13,4 +13,4 @@ Tot i això, Unitat hem obtingut tres regidors, essent la segona força en nombr
 
 Hem fet una campanya molt intensa, amb 12 actes al carrer, sortint cada setmana a la plaça a informar els veïns durant 2 mesos, fent 3 o 4 reunions setmanals... Estem molt contents del resultat obtingut i de que el projecte d'Unitat segueixi endavant, comptant amb un fort recolzament del poble d'Argentona.
 
-Gràcies amigues i amics. No dubteu que treballarem amb la màxima dedicació i competència. Per a Argentona, i per a la República.
+Gràcies amigues i amics. No dubteu que treballarem amb la màxima dedicació. Per Argentona i per la República.
