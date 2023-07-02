@@ -1,12 +1,14 @@
 ---
-interface Props {
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<'a'> {
   href: string
   color?: 'turquesa' | 'gray' | 'groc' | 'vermell'
   className?: string
   children: any
 }
 
-const { href, color = 'gray', className } = Astro.props
+const { href, color = 'gray', className, ...props } = Astro.props
 
 const colorClass = `color-${color}`
 ---
@@ -14,6 +16,7 @@ const colorClass = `color-${color}`
 <a
   href={href}
   class:list={['container', colorClass, { className: !!className }]}
+  {...props}
 >
   <slot />
 </a>
