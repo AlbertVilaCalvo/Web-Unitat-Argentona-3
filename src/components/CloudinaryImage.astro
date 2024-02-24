@@ -3,6 +3,14 @@ import type { CloudinaryImageId } from '../misc/cloudinary'
 import type { HTMLAttributes } from 'astro/types'
 import { cloudinary } from '../misc/cloudinary'
 import { Resize } from '@cloudinary/url-gen/actions'
+// import { face } from '@cloudinary/url-gen/qualifiers/focusOn'
+// import { focusOn } from '@cloudinary/url-gen/qualifiers/gravity'
+
+// https://www.npmjs.com/package/@cloudinary/url-gen
+// https://github.com/colbyfayock/my-astro-cloudinary
+// https://spacejelly.dev/posts/how-to-optimize-dynamically-resize-images-in-astro-with-cloudinary/
+// https://www.youtube.com/watch?v=bwGFqqS4gIE
+// https://github.com/ericrisco/astro-cloudinary-image
 
 type Props = Omit<HTMLAttributes<'img'>, 'src'> & {
   id: CloudinaryImageId
@@ -12,6 +20,15 @@ type Props = Omit<HTMLAttributes<'img'>, 'src'> & {
 const { id, resizeWidth, resizeHeight, ...props } = Astro.props
 
 let image = cloudinary.image(`Unitat/${id}`)
+
+// OJO si poso f_auto pujaré un PNG però servirà un AVIF automàticament!
+// Per exemple: src="https://res.cloudinary.com/nucliweb/image/upload/f_auto/v1677268466/workshops/t3chfest-2023/images/news/pablo-merchan-montes-Orz90t6o0e4-unsplash.jpg"
+// https://github.com/nucliweb/image-optimization-workshop/tree/image-optim-cloudinary
+// Pots veure el 'Type' a Chrome Network.
+// I li pots dir quins formats (PNG, AVIF) vols amb headers.
+// També hi ha dpr_auto (resolució).
+// També es pot referenciar una altra imatge a un altre servidor:
+// https://res.cloudinary.com/nucliweb/image/fetch/f_auto/https://image-optim-cloudinary--image-optimization-workshop.netlify.app/images/alex-haney-CAhjZmVk5H4-unsplash.jpg
 
 if (resizeWidth && resizeHeight) {
   image = image.resize(
@@ -25,7 +42,13 @@ if (resizeWidth && resizeHeight) {
   image = image.resize(Resize.fill().height(resizeHeight * 2))
 }
 
+// .gravity(focusOn(face()))
+
 const imageUrl = image.toURL()
 ---
 
 <img src={imageUrl} {...props} />
+<!--
+TODO restrict image domain:
+https://johnnyreilly.com/docusaurus-image-cloudinary-rehype-plugin#allowed-fetch-domains
+-->

@@ -12,6 +12,8 @@ const agendaCollection = defineCollection({
 const blogPostSchema = z.object({
   title: z.string(),
   date: z.date(),
+  // https://astro.build/blog/astro-250/#data-collections-and-references
+  // author: z.reference('authors'),
 })
 const blogCollection = defineCollection({
   schema: blogPostSchema,

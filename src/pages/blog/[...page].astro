@@ -30,7 +30,11 @@ const posts = page.data
     <BlogPostList posts={posts} headingLevel={2} />
 
     {
-      /* TODO this should use gray buttons like next-prev noticia, aligned left/right */
+      /*
+      TODO this should use gray buttons like next-prev noticia, aligned left/right
+      https://rimdev.io/creating-a-pagination-component-with-astro/
+      OJO que no perdi el rel="" quan canviï el <a> per ButtonLink
+      */
       /* TODO we could show the page number with page.currentPage / page.total */
     }
     <div class="prev-next-links-container">

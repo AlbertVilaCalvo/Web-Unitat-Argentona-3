@@ -13,6 +13,7 @@ const { Content } = await event.render()
 
 <article class="container">
   <Heading class="heading">{event.data.title}</Heading>
+  {/* TODO posar icona mapa i agenda */}
   <time datetime={event.data.date.toISOString()} class="date">
     {
       event.data.date
