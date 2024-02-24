@@ -25,6 +25,21 @@ const latestPosts = allPosts.slice(0, 3)
     />
   </section>
 
+  {
+    events.length > 0 && (
+      <section class="layout-center-with-margin">
+        <h2>Agenda</h2>
+        <AgendaEventList events={events} headingLevel={3} />
+      </section>
+    )
+  }
+
+  <section class="layout-center-with-margin">
+    <h2>Novetats</h2>
+    <BlogPostList posts={latestPosts} headingLevel={3} />
+    <ButtonLink href="/blog" color="turquesa">Més articles</ButtonLink>
+  </section>
+
   <section class="layout-center-with-margin">
     <h2>Llista</h2>
     <ol class="llista-container">
@@ -112,21 +127,6 @@ const latestPosts = allPosts.slice(0, 3)
     <ButtonLink href="/programa" color="turquesa">
       Consulta el nostre programa
     </ButtonLink>
-  </section>
-
-  {
-    events.length > 0 && (
-      <section class="layout-center-with-margin">
-        <h2>Agenda</h2>
-        <AgendaEventList events={events} headingLevel={3} />
-      </section>
-    )
-  }
-
-  <section class="layout-center-with-margin">
-    <h2>Novetats</h2>
-    <BlogPostList posts={latestPosts} headingLevel={3} />
-    <ButtonLink href="/blog" color="turquesa">Més articles</ButtonLink>
   </section>
 </MainLayout>
 
