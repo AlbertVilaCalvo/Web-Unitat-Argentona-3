@@ -9,4 +9,4 @@ Els dies vinents els argentonins rebreu a casa vostra el segon butlletí d'Unita
 
 En aquest número tractem a fons l'arbrat del poble, i en particular les molèsties que generen els plàtans, i també els projectes de la Velcro i la nova biblioteca, entre altres qüestions.
 
-Esperem que en sigui del vostre interès!
+Esperem que sigui del vostre interès!
