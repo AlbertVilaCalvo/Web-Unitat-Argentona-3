@@ -2,7 +2,7 @@
 
 Update dependencies:
 
-```
-npm i -E astro@latest && \
-npm i -D -E prettier@latest prettier-plugin-astro@latest
+```shell
+npx @astrojs/upgrade && \
+npm i -D -E prettier@latest prettier-plugin-astro@latest @astrojs/check@latest typescript@latest
 ```
