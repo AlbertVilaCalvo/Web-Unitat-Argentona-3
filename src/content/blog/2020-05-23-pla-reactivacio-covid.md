@@ -3,7 +3,7 @@ title: Pla de reactivació del municipi després de la crisi de la Covid-19
 date: 2020-05-23
 ---
 
-UNITAT · Argentona per la República ha presentat una proposta per al desenvolupament, conjuntament amb  tots els grups de l’oposició, d'un pla transversal per a la reconstrucció social i econòmica del municipi. Es tracta d'una sèrie de mesures per tal de mitigar els efectes provocats per la crisi sanitària de la Covid-19.
+UNITAT · Argentona per la República ha presentat una proposta per al desenvolupament, conjuntament amb tots els grups de l’oposició, d'un pla transversal per a la reconstrucció social i econòmica del municipi. Es tracta d'una sèrie de mesures per tal de mitigar els efectes provocats per la crisi sanitària de la Covid-19.
 
 La proposta s'estructura en dues fases en què s'aplicaran mesures en els diversos àmbits d'actuació del govern municipal.
 
