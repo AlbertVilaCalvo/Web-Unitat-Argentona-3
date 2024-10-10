@@ -185,6 +185,7 @@ h1 {
 h2 {
   font-size: var(--font-size-20); /* h2 default is 24px in Firefox */
   margin-top: 30px;
+  margin-bottom: 10px;
 }
 h3 {
   font-size: var(--font-size-18); /* h2 default is 19px in Firefox */
