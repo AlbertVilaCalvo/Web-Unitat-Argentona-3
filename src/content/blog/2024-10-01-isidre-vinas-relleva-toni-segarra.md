@@ -1,6 +1,6 @@
 ---
 title: Isidre Viñas relleva Toni Segarra
-date: 2024-09-30
+date: 2024-10-01
 ---
 
 En el [ple municipal del mes de juliol](https://argentona.cat/document.php?id=57758), **Toni Segarra**, cap de llista del partit Unitat, va presentar la seva renúncia a l'acta de regidor. La decisió de no finalitzar el mandat la tenia ja prevista i així ho va manifestar d'inici. La candidatura d'Unitat presentada a les darreres eleccions deu molt a la seva generositat a l'hora d'assumir la responsabilitat d'encapçalar-la en unes circumstàncies molt crítiques i, ja en ple mandat, a la seva amplíssima experiència política, tan útil en una formació poc avesada a la gestió de la política municipal. Des de la nova posició en el partit, Toni Segarra continua sent necessari i el seu assessorament, molt valorat.
