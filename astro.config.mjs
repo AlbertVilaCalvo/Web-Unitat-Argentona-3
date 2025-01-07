@@ -12,7 +12,4 @@ export default defineConfig({
     //  https://github.com/withastro/roadmap/blob/main/proposals/0036-inline-stylesheets.md
     //  inlineStylesheets: "auto",
   },
-  legacy: {
-    collections: true,
-  },
 })

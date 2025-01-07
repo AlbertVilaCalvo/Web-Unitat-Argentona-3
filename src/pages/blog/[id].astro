@@ -1,13 +1,13 @@
 ---
 import type { GetStaticPaths } from 'astro'
-import { type CollectionEntry, getCollection } from 'astro:content'
+import { type CollectionEntry, getCollection, render } from 'astro:content'
 import MainLayout from '../../layouts/MainLayout.astro'
 import { capitalize } from '../../utils'
 
 export const getStaticPaths = (async () => {
   const blogEntries = await getCollection('blog')
   return blogEntries.map((post: CollectionEntry<'blog'>) => ({
-    params: { slug: post.slug },
+    params: { id: post.id },
     props: { post },
   }))
 }) satisfies GetStaticPaths
@@ -20,7 +20,7 @@ interface Props {
 }
 
 const { post } = Astro.props as Props
-const { Content } = await post.render()
+const { Content } = await render(post)
 ---
 
 <MainLayout title={post.data.title}>

@@ -1,4 +1,7 @@
 import { z, defineCollection } from 'astro:content'
+import { glob } from 'astro/loaders'
+
+// Agenda
 
 const agendaEventSchema = z.object({
   title: z.string(),
@@ -7,7 +10,10 @@ const agendaEventSchema = z.object({
 })
 const agendaCollection = defineCollection({
   schema: agendaEventSchema,
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/agenda' }),
 })
+
+// Blog
 
 const blogPostSchema = z.object({
   title: z.string(),
@@ -17,6 +23,7 @@ const blogPostSchema = z.object({
 })
 const blogCollection = defineCollection({
   schema: blogPostSchema,
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/blog' }),
 })
 export type BlogPost = z.infer<typeof blogPostSchema>
 

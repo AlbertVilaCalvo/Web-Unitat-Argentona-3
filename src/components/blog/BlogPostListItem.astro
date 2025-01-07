@@ -1,18 +1,18 @@
 ---
-import type { BlogPost } from '../../content/config'
+import type { BlogPost } from '../../content.config'
 
 interface Props {
-  slug: string
+  id: string
   frontmatter: BlogPost
   headingLevel: 2 | 3
 }
 
-const { slug, frontmatter, headingLevel } = Astro.props
+const { id, frontmatter, headingLevel } = Astro.props
 const Heading = headingLevel === 2 ? 'h2' : 'h3'
 ---
 
 <article class="outer-container">
-  <a href={`/blog/${slug}`} class="inner-container link">
+  <a href={`/blog/${id}`} class="inner-container link">
     <Heading class="heading">{frontmatter.title}</Heading>
     <time datetime={frontmatter.date.toISOString()} class="date">
       {

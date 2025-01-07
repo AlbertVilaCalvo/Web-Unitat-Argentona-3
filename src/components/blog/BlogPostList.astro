@@ -13,7 +13,7 @@ const { posts, headingLevel } = Astro.props
 {
   posts.map((post) => (
     <BlogPostListItem
-      slug={post.slug}
+      id={post.id}
       frontmatter={post.data}
       headingLevel={headingLevel}
     />

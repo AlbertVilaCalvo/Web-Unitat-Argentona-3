@@ -1,5 +1,5 @@
 ---
-import type { CollectionEntry } from 'astro:content'
+import { type CollectionEntry, render } from 'astro:content'
 
 interface Props {
   event: CollectionEntry<'agenda'>
@@ -8,7 +8,7 @@ interface Props {
 
 const { event, headingLevel } = Astro.props as Props
 const Heading = headingLevel === 2 ? 'h2' : 'h3'
-const { Content } = await event.render()
+const { Content } = await render(event)
 ---
 
 <article class="container">
