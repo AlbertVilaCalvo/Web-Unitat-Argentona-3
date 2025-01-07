@@ -11,7 +11,7 @@ import BlogPostList from '../../components/blog/BlogPostList.astro'
 
 export const getStaticPaths = (async ({ paginate }) => {
   const posts = await getPostsSorted()
-  return paginate(posts, { pageSize: 4 })
+  return paginate(posts, { pageSize: 5 })
 }) satisfies GetStaticPaths
 
 // Page fields: https://docs.astro.build/en/core-concepts/routing/#complete-api-reference
@@ -35,20 +35,20 @@ const posts = page.data
       https://rimdev.io/creating-a-pagination-component-with-astro/
       OJO que no perdi el rel="" quan canviï el <a> per ButtonLink
       */
-      /* TODO we could show the page number with page.currentPage / page.total */
     }
     <div class="prev-next-links-container">
       {
         page.url.prev ? (
           <a href={page.url.prev} rel="prev" class="prev-next-link">
-            ← Pàgina Anterior
+            ← Més recents
           </a>
         ) : null
       }
+      <p>{page.currentPage} / {page.lastPage}</p>
       {
         page.url.next ? (
           <a href={page.url.next} rel="next" class="prev-next-link">
-            Pàgina Següent →
+            Més antics →
           </a>
         ) : null
       }
@@ -58,7 +58,7 @@ const posts = page.data
 
 <style>
   .prev-next-links-container {
-    margin-top: 16px;
+    margin-top: 40px;
     display: flex;
     flex-direction: row;
     justify-content: center;
