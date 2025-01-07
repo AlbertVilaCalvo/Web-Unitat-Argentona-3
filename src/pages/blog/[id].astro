@@ -1,14 +1,21 @@
 ---
 import type { GetStaticPaths } from 'astro'
-import { type CollectionEntry, getCollection, render } from 'astro:content'
+import { type CollectionEntry, render } from 'astro:content'
 import MainLayout from '../../layouts/MainLayout.astro'
-import { capitalize } from '../../utils'
+import { capitalize, getPostsSorted } from '../../utils'
 
 export const getStaticPaths = (async () => {
-  const blogEntries = await getCollection('blog')
-  return blogEntries.map((post: CollectionEntry<'blog'>) => ({
+  const blogEntries = await getPostsSorted()
+  return blogEntries.map((post: CollectionEntry<'blog'>, index: number) => ({
     params: { id: post.id },
-    props: { post },
+    props: {
+      post,
+      newerPost: index === 0 ? undefined : blogEntries.at(index - 1),
+      olderPost:
+        index === blogEntries.length - 1
+          ? undefined
+          : blogEntries.at(index + 1),
+    },
   }))
 }) satisfies GetStaticPaths
 
@@ -17,9 +24,11 @@ export const getStaticPaths = (async () => {
 // (works in VSCode but not in WebStorm)
 interface Props {
   post: CollectionEntry<'blog'>
+  newerPost: CollectionEntry<'blog'>
+  olderPost: CollectionEntry<'blog'>
 }
 
-const { post } = Astro.props as Props
+const { post, newerPost, olderPost } = Astro.props as Props
 const { Content } = await render(post)
 ---
 
@@ -40,7 +49,25 @@ const { Content } = await render(post)
         <Content />
       </div>
     </article>
-    {/* TODO previous/next post link */}
+    <div class="prev-next-links-container">
+      {
+        newerPost ? (
+          <a href={`/blog/${newerPost.id}`} rel="prev" class="prev-link">
+            ← Següent
+            <br />
+            {newerPost.data.title}
+          </a>
+        ) : null
+      }
+      {
+        olderPost ? (
+          <a href={`/blog/${olderPost.id}`} rel="next" class="next-link">
+            Anterior →<br />
+            {olderPost.data.title}
+          </a>
+        ) : null
+      }
+    </div>
   </section>
 </MainLayout>
 
@@ -64,21 +91,20 @@ const { Content } = await render(post)
     margin-bottom: 0;
   }
 
-  /*
   .prev-next-links-container {
     margin-top: var(--layout-content-margin-1_5);
     display: flex;
-    !* TODO maybe we should add flex-wrap: wrap; *!
     flex-direction: row;
     justify-content: space-between;
   }
 
   .prev-link {
+    flex: 1;
     margin-right: var(--layout-content-margin-0_5);
   }
 
   .next-link {
-    margin-left: auto;
+    flex: 1;
+    text-align: right;
   }
-  */
 </style>
