@@ -1,5 +1,7 @@
 import { Cloudinary } from '@cloudinary/url-gen'
 
+// Official SDK https://astro.cloudinary.dev
+
 export const cloudinary = new Cloudinary({ cloud: { cloudName: 'albertvila' } })
 
 export type CloudinaryImageId =
