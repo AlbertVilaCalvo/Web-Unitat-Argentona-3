@@ -3,13 +3,13 @@ title: Sobre el Projecte T, la pavimentació dels carrers Dr. Samsó i Dr. Farre
 date: 2024-10-02
 ---
 
-Intervenció d'Isidre Viñas al [ple municipal de setembre de 2024](https://www.youtube.com/watch?v=RoCiPvawZbg).
+Aquest article és una transcripció de la [intervenció d'Isidre Viñas al ple municipal de setembre de 2024, també disponible a YouTube en vídeo](https://www.youtube.com/live/RoCiPvawZbg?feature=shared&t=428).
 
 ## Projecte T
 
 En junta de govern local del proppassat juliol van aprovar inicialment un projecte de
-Reurbanització d'uns trams dels carrers Dr. Samsó i Farrero, ho van fer per vacances
-suposo que perquè tinguéssim més temps per llegir-lo i fer al·legacions si s'esqueia,
+Reurbanització d'uns trams dels carrers Dr. Samsó i Dr. Farrero. Ho van fer per vacances
+suposo que perquè tinguéssim més temps per llegir-lo i fer al·legacions si s'esqueia;
 ara ja ha passat el termini d'exposició pública i no s'hi poden fer al·legacions.
 
 Doncs ens va passar per alt, no ens en vam assabentar com altres partits mínim un, és un
