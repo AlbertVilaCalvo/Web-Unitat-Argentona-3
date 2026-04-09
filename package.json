@@ -9,8 +9,8 @@
     "preview": "rm -rf dist && npm run build && astro preview",
     "astro": "astro",
     "check": "astro check && tsc --noEmit",
-    "format": "npx prettier --write .",
-    "format:check": "npx prettier --check ."
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "@cloudinary/url-gen": "1.10.0",
