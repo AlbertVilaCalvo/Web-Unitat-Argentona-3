@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Runs Prettier  and `astro check`.
+# Runs Prettier and `astro check`.
 # This hook always commits, even if errors are found. And it does not modify the files (i.e.,
 # it does not do `prettier write`) - it only checks if there are issues and reports them.
 # Inspired by https://prettier.io/docs/precommit.html#option-5-shell-script
